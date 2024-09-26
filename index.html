@@ -1,112 +1,81 @@
 <!DOCTYPE html>
 <html lang="ar">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حاسبة متجاوبة</title>
-    <!-- تضمين Bootstrap من CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css"> <!-- ملف CSS خارجي -->
+</head>
+<body>
     <div class="container mt-5">
-	  <div class="row justify-content-center">
-		<div class="col-md-4 col-sm-8 col-12">
-		  <div class="card">
-			<div class="card-body">
-			  <h4 class="card-title text-center">حاسبة رياضية</h4>
-			  <div class="row">
-				<!-- العمود الجديد على اليسار للدوال الرياضية -->
-				<div class="col-3">
-				  <div class="btn-group-vertical btn-group-lg mb-2" role="group">
-					<button class="btn btn-info" onclick="operateMath('sin')">sin</button>
-					<button class="btn btn-info" onclick="operateMath('cos')">cos</button>
-					<button class="btn btn-info" onclick="operateMath('tan')">tan</button>
-					<button class="btn btn-info" onclick="operateMath('log')">log</button>
-					<button class="btn btn-info" onclick="operateMath('sqrt')">√</button>
-				  </div>
-				</div>
-
-				<!-- العمود الأصلي للأرقام والعمليات -->
-				<div class="col-9">
-				  <div id="calculator" class="text-center">
-					<input type="text" id="result" class="form-control mb-3" readonly>
-					<div class="btn-group btn-group-lg mb-2" role="group">
-					  <button class="btn btn-light" onclick="appendNumber('1')">1</button>
-					  <button class="btn btn-light" onclick="appendNumber('2')">2</button>
-					  <button class="btn btn-light" onclick="appendNumber('3')">3</button>
-					  <button class="btn btn-warning" onclick="operate('+')">+</button>
-					</div>
-					<div class="btn-group btn-group-lg mb-2" role="group">
-					  <button class="btn btn-light" onclick="appendNumber('4')">4</button>
-					  <button class="btn btn-light" onclick="appendNumber('5')">5</button>
-					  <button class="btn btn-light" onclick="appendNumber('6')">6</button>
-					  <button class="btn btn-warning" onclick="operate('-')">-</button>
-					</div>
-					<div class="btn-group btn-group-lg mb-2" role="group">
-					  <button class="btn btn-light" onclick="appendNumber('7')">7</button>
-					  <button class="btn btn-light" onclick="appendNumber('8')">8</button>
-					  <button class="btn btn-light" onclick="appendNumber('9')">9</button>
-					  <button class="btn btn-warning" onclick="operate('*')">*</button>
-					</div>
-					<div class="btn-group btn-group-lg mb-2" role="group">
-					  <button class="btn btn-danger" onclick="clearResult()">C</button>
-					  <button class="btn btn-light" onclick="appendNumber('0')">0</button>
-					  <button class="btn btn-success" onclick="calculate()">=</button>
-					  <button class="btn btn-warning" onclick="operate('/')">/</button>
-					</div>
-				  </div>
-				</div>
-			  </div> <!-- نهاية الصف -->
-			</div>
-		  </div>
-		</div>
-	  </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-8 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">حاسبة رياضية</h4>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="btn-group-vertical btn-group-lg mb-2" role="group">
+                                    <button class="btn btn-info" onclick="operateMath('sin')">sin</button>
+                                    <button class="btn btn-info" onclick="operateMath('cos')">cos</button>
+                                    <button class="btn btn-info" onclick="operateMath('tan')">tan</button>
+                                    <button class="btn btn-info" onclick="operateMath('log')">log</button>
+                                    <button class="btn btn-info" onclick="operateMath('sqrt')">√</button>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div id="calculator" class="text-center">
+                                    <input type="text" id="result" class="form-control mb-3" readonly>
+                                    <div class="btn-group btn-group-lg mb-2" role="group">
+                                        <button class="btn btn-light" onclick="appendNumber('1')">1</button>
+                                        <button class="btn btn-light" onclick="appendNumber('2')">2</button>
+                                        <button class="btn btn-light" onclick="appendNumber('3')">3</button>
+                                        <button class="btn btn-warning" onclick="operate('+')">+</button>
+                                    </div>
+                                    <div class="btn-group btn-group-lg mb-2" role="group">
+                                        <button class="btn btn-light" onclick="appendNumber('4')">4</button>
+                                        <button class="btn btn-light" onclick="appendNumber('5')">5</button>
+                                        <button class="btn btn-light" onclick="appendNumber('6')">6</button>
+                                        <button class="btn btn-warning" onclick="operate('-')">-</button>
+                                    </div>
+                                    <div class="btn-group btn-group-lg mb-2" role="group">
+                                        <button class="btn btn-light" onclick="appendNumber('7')">7</button>
+                                        <button class="btn btn-light" onclick="appendNumber('8')">8</button>
+                                        <button class="btn btn-light" onclick="appendNumber('9')">9</button>
+                                        <button class="btn btn-warning" onclick="operate('*')">*</button>
+                                    </div>
+                                    <div class="btn-group btn-group-lg mb-2" role="group">
+                                        <button class="btn btn-danger" onclick="clearResult()">C</button>
+                                        <button class="btn btn-light" onclick="appendNumber('0')">0</button>
+                                        <button class="btn btn-success" onclick="calculate()">=</button>
+                                        <button class="btn btn-warning" onclick="operate('/')">/</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- نهاية الصف -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- تضمين jQuery و Bootstrap JavaScript من CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-        let resultElement = document.getElementById('result');
-        let expression = '';
-
-        function appendNumber(number) {
-            expression += number;
-            resultElement.value = expression;
+    <script src="script.js"></script> <!-- ملف JavaScript خارجي -->
+    
+    <script>
+        // تسجيل Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, function(error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
         }
-
-        function operate(operator) {
-            expression += ' ' + operator + ' ';
-            resultElement.value = expression;
-        }
-
-        function operateMath(func) {
-            try {
-                if (func === 'sqrt') {
-                    expression = Math.sqrt(eval(expression));
-                } else {
-                    expression = Math[func](eval(expression));
-                }
-                resultElement.value = expression;
-            } catch (e) {
-                resultElement.value = 'خطأ';
-            }
-        }
-
-        function calculate() {
-            try {
-                resultElement.value = eval(expression);
-                expression = resultElement.value;
-            } catch (e) {
-                resultElement.value = 'خطأ';
-            }
-        }
-
-        function clearResult() {
-            expression = '';
-            resultElement.value = '';
-        }
-</script>
-  </body>
+    </script>
+</body>
 </html>
